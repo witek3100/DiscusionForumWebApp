@@ -1,6 +1,6 @@
 <?php
 
-$host = "127.0.0.1";
+$host = "localhost";
 $dbname = "discussionforumdb";
 $username = "root";
 $password = "";

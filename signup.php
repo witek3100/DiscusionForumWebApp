@@ -28,7 +28,7 @@ $pass_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
 $db = require __DIR__ . "/db_connection.php";
 
-$sql = "INSERT INTO user (name, surname, email, password) VALUES (?, ?, ?, ?)";
+$sql = "INSERT INTO user (Name, Surname, Email, Password) VALUES (?, ?, ?, ?)";
 
 $statement = $db->stmt_init();
 
@@ -36,9 +36,15 @@ if (!$statement->prepare($sql)){
     die("SQL error: " . $db->error);
 }
 
-$statement->bind_param("ssss", $_POST["bind"], $_POST["surname"], $_POST["email"], $_POST["password"]);
+$statement->bind_param("ssss", $_POST["name"], $_POST["surname"], $_POST["email"], $_POST["password"]);
 
-$statement->execute();
-
-print_r($_POST);
+if ($statement->execute()) {
+    header("Location: login.php");
+} else {
+    if ($db->errno === 1062) {
+        die("Email already taken");
+    } else {
+        die($db->error . " " . $db->errno);
+    }
+}
 
