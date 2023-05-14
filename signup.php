@@ -26,5 +26,19 @@ if ($_POST["password"] !== $_POST["confirm_password"]) {
 
 $pass_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
+$db = require __DIR__ . "/db_connection.php";
+
+$sql = "INSERT INTO user (name, surname, email, password) VALUES (?, ?, ?, ?)";
+
+$statement = $db->stmt_init();
+
+if (!$statement->prepare($sql)){
+    die("SQL error: " . $db->error);
+}
+
+$statement->bind_param("ssss", $_POST["bind"], $_POST["surname"], $_POST["email"], $_POST["password"]);
+
+$statement->execute();
+
 print_r($_POST);
 
