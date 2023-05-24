@@ -5,7 +5,7 @@ $db = require __DIR__ . "/db_connection.php";
 
 <!DOCTYPE html>
 <html lang="en">
-<script src="js/includesidebar.js"></script>
+<script src="../js/includesidebar.js"></script>
 <head>
     <style>
         .postbox {
@@ -36,7 +36,7 @@ $db = require __DIR__ . "/db_connection.php";
             <a href="createpost.php">Create new post</a><br>
         <?php else: ?>
             <p>Not logged in</p>
-            <p><a href="login.php">Login</a>   <a href="signup.html">Signup</a> </p><br>
+            <p><a href="login.php">Login</a>   <a href="../templates/signup.html">Signup</a> </p><br>
         <?php endif; ?>
     </div>
     <br>

@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<script src="js/includesidebar.js"></script>
+<script src="../js/includesidebar.js"></script>
 <head>
     <style>
         .postbox {
