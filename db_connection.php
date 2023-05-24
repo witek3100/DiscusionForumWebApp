@@ -2,8 +2,8 @@
 
 $host = "localhost";
 $dbname = "discussionforumdb";
-$username = "root";
-$password = "";
+$username = "user";
+$password = "userUSER1/";
 
 $db = new mysqli($host, $username, $password, $dbname);
 

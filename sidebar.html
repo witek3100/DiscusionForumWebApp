@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .sidenav {
+            height: 100%; /* Full-height: remove this if you want "auto" height */
+            width: 300px; /* Set the width of the sidebar */
+            position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+            z-index: 1; /* Stay on top */
+            top: 0; /* Stay at the top */
+            left: 0;
+            background-color: #111; /* Black */
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding-top: 20px;
+        }
+
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="sidenav">
+            <p><label for="search">search</label>
+            <input id="search"></p>
+            <p><a href="index.php">Home</a></p>
+            <p><a href="tags.php">Tags list</a></p>
+        </div>
+    </center>
+</body>
+</html>
